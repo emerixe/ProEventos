@@ -1,20 +1,31 @@
-import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-eventos',
   standalone: true,
-  imports: [],
+  imports: [ NgFor],
   templateUrl: './eventos.component.html',
   styleUrl: './eventos.component.scss'
 })
-export class EventosComponent {
-
-/**
- * name
- */
-public evento: any = {
-  Tema: 'Angular',
+export class EventosComponent implements OnInit{
+public evento: any = [
+ {
+  Tema: 'Angular 11',
   Local: 'Belo Horizonte'
+},
+{
+  Tema: 'NET 5',
+  Local: 'São Paulo'
 }
-
+,
+{
+  Tema: 'Angular e Suas Novidades',
+  Local: 'Rio de Janeiro'
+}
+]
+constructor(){}
+ngOnInit(): void {
+  
+}
 }
